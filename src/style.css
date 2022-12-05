@@ -1,7 +1,70 @@
+body {
+  font-family: sans-serif;
+  margin: 60px 0;
+  background: #f4eeff;
+}
 h1 {
   text-align: center;
 }
 
+h2 {
+  margin: 0;
+}
+
+select {
+  border: 1px solid #d9dad7;
+  border-radius: 8px;
+  font-size: 20px;
+  width: 100%;
+  padding: 10px 10px;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #7047a3;
+}
+
+.container {
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  max-width: 600px;
+  padding: 20px 30px;
+}
+
+.city {
+  border-bottom: 1px dashed #d9dad7;
+  margin: 20px 0;
+  padding: 10px 0;
+  display: flex;
+  font-size: 24px;
+  justify-content: space-between;
+}
+
+.city:last-child {
+  border-bottom: none;
+}
+
+.date {
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.time {
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 1.5;
+}
+
+.time small {
+  font-size: 24px;
+  vertical-align: middle;
+}
+
 footer {
+  font-size: 12px;
+  margin: 30px 0;
   text-align: center;
 }
