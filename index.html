@@ -16,13 +16,14 @@
   </head>
   <body>
     <div class="container">
-      <h1>World Clock</h1>
+      <h1>
+        <a href="/"> World Clock</a>
+      </h1>
       <form action="/submit">
         <select name="" id="listCity">
           <option value="">Select a city</option>
-          <option value="current">My current location</option>
+          <option value="current">My Current Location</option>
           <option value="Asia/Tokyo">Tokyo</option>
-          <option value="Europe/Oslo">Oslo</option>
           <option value="Australia/Sydney">Sydney</option>
           <option value="America/New_York">New York</option>
         </select>
@@ -47,7 +48,19 @@
             <small></small>
           </div>
         </div>
+
+        <div class="city" id="oslo">
+          <div>
+            <h2>Oslo</h2>
+            <div class="date"></div>
+          </div>
+          <div class="time">
+            <small></small>
+          </div>
+        </div>
       </div>
+
+      <a href="/" class="homepage">Back to All Cities</a>
     </div>
     <footer>
       This project was coded by

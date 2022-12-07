@@ -30,6 +30,22 @@ function showCityTimezones() {
       "h:mm:ss [<small]>A[</small>]"
     );
   }
+
+  //Oslo
+
+  let osloElement = document.querySelector("#oslo");
+
+  if (osloElement) {
+    let showOsloTimezone = moment().tz("Europe/Oslo");
+
+    let osloDateElement = osloElement.querySelector(".date");
+    let osloTimeElement = osloElement.querySelector(".time");
+
+    osloDateElement.innerHTML = showOsloTimezone.format("MMMM Do, YYYY");
+    osloTimeElement.innerHTML = showOsloTimezone.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 showCityTimezones();
 setInterval(showCityTimezones, 1000);
@@ -37,22 +53,24 @@ setInterval(showCityTimezones, 1000);
 function handleShowCity(event) {
   let cityTimezone = event.target.value;
   if (cityTimezone === "current") {
-    currentTimezone = moment.tz.guess();
+    cityTimezone = moment.tz.guess();
   }
   let cityName = cityTimezone.replace("_", " ").split("/")[1];
   let cityTime = moment().tz(cityTimezone);
   let citiesElement = document.querySelector(".cities");
   citiesElement.innerHTML = `
-  <div class="city">
-    <div>
-    <h2>${cityName}</h2>
-    <div class="date">${cityTime.format("MMMM Do, YYYY")}</div>
-    </div>
-    <div class="time">
-    ${cityTime.format("h:mm:ss")} <small>${cityTime.format("A")}</small>
-    </div>
-</div>`;
+    <div class="city">
+      <div>
+      <h2>${cityName}</h2>
+      <div class="date">${cityTime.format("MMMM Do, YYYY")}</div>
+      </div>
+      <div class="time">
+      ${cityTime.format("h:mm:ss")} <small>${cityTime.format("A")}</small>
+      </div>
+  </div>`;
 }
 
 let cityElement = document.querySelector("#listCity");
 cityElement.addEventListener("change", handleShowCity);
+
+setInterval(handleShowCity, 1000);
