@@ -37,7 +37,7 @@ a {
 .city {
   border-bottom: 1px dashed #d9dad7;
   margin: 20px 0;
-  padding: 20px;
+  padding: 20px 0;
   display: flex;
   font-size: 24px;
   justify-content: space-between;
@@ -55,7 +55,7 @@ a {
 .time {
   font-weight: bold;
   font-size: 48px;
-  line-height: 1.5;
+  line-height: 1;
 }
 
 .time small {
