@@ -7,6 +7,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.39/moment-timezone-with-data-1970-2030.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
+    <script
+      src="https://kit.fontawesome.com/3b18046631.js"
+      crossorigin="anonymous"
+    ></script>
+
     <title>World Clock - By Natalie Yeung</title>
   </head>
   <body>
@@ -15,22 +20,31 @@
       <form action="/submit">
         <select name="" id="listCity">
           <option value="">Select a city</option>
-          <option value="America/Vancouver">Vancouver</option>
-          <option value="Asia/Singapore">Singapore</option>
-          <option value="Europe/Rome">Rome</option>
+          <option value="current">My current location</option>
+          <option value="Asia/Tokyo">Tokyo</option>
+          <option value="Europe/Oslo">Oslo</option>
           <option value="Australia/Sydney">Sydney</option>
           <option value="America/New_York">New York</option>
         </select>
       </form>
       <div class="cities">
-        <div class="city">
+        <div class="city" id="singapore">
           <div>
-            <h2>Tokyo</h2>
-            <div class="date">December 5th, 2022</div>
+            <h2>Singapore</h2>
+            <div class="date"></div>
           </div>
           <div class="time">
-            1:35:25
-            <small>PM</small>
+            <small></small>
+          </div>
+        </div>
+
+        <div class="city" id="vancouver">
+          <div>
+            <h2>Vancouver</h2>
+            <div class="date"></div>
+          </div>
+          <div class="time">
+            <small></small>
           </div>
         </div>
       </div>

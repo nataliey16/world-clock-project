@@ -14,25 +14,31 @@ function showCityTimezones() {
     );
   }
 
-  //Rome
+  //Vancouver
 
-  let romeElement = document.querySelector("#rome");
+  let vancouverElement = document.querySelector("#vancouver");
 
-  if (romeElement) {
-    let showRomeTimezone = moment().tz("Europe/Rome");
+  if (vancouverElement) {
+    let showVancouverTimezone = moment().tz("America/Vancouver");
 
-    let romeDateElement = romeElement.querySelector(".date");
-    let romeTimeElement = romeElement.querySelector(".time");
+    let vancouverDateElement = vancouverElement.querySelector(".date");
+    let vancouverTimeElement = vancouverElement.querySelector(".time");
 
-    romeDateElement.innerHTML = showRomeTimezone.format("MMMM Do, YYYY");
-    romeTimeElement.innerHTML = showRomeTimezone.format(
+    vancouverDateElement.innerHTML =
+      showVancouverTimezone.format("MMMM Do, YYYY");
+    vancouverTimeElement.innerHTML = showVancouverTimezone.format(
       "h:mm:ss [<small]>A[</small>]"
     );
   }
 }
+showCityTimezones();
+setInterval(showCityTimezones, 1000);
 
 function handleShowCity(event) {
   let cityTimezone = event.target.value;
+  if (cityTimezone === "current") {
+    currentTimezone = moment.tz.guess();
+  }
   let cityName = cityTimezone.replace("_", " ").split("/")[1];
   let cityTime = moment().tz(cityTimezone);
   let citiesElement = document.querySelector(".cities");
@@ -50,5 +56,3 @@ function handleShowCity(event) {
 
 let cityElement = document.querySelector("#listCity");
 cityElement.addEventListener("change", handleShowCity);
-
-setInterval(showCityTimezones, 1000);
