@@ -13,31 +13,33 @@
     <div class="container">
       <h1>World Clock</h1>
       <form action="/submit">
-        <label for="cities"></label>
-        <select name="city" id="cities">
+        <select name="" id="listCity">
           <option value="">Select a city</option>
-          <option value="">Singapore</option>
-          <option value="">Rome</option>
+          <option value="Asia/Singapore">Singapore</option>
+          <option value="Europe/Rome">Rome</option>
+          <option value="Australia/Sydney">Sydney</option>
+          <option value="America/New_York">New York</option>
         </select>
       </form>
+      <div class="cities">
+        <div class="city" id="singapore">
+          <div>
+            <h2>Singapore 🇸🇬</h2>
+            <div class="date">December 5th, 2022</div>
+          </div>
+          <div class="time">
+            1:35:25
+            <small>PM</small>
+          </div>
+        </div>
 
-      <div class="city" id="singapore">
-        <div>
-          <h2>Singapore 🇸🇬</h2>
-          <div class="date">December 5th, 2022</div>
+        <div class="city" id="rome">
+          <div>
+            <h2>Rome 🇮🇹</h2>
+            <div class="date">December 5th, 2022</div>
+          </div>
+          <div class="time">1:35:25 <small>PM</small></div>
         </div>
-        <div class="time">
-          1:35:25
-          <small>PM</small>
-        </div>
-      </div>
-
-      <div class="city" id="rome">
-        <div>
-          <h2>Rome 🇮🇹</h2>
-          <div class="date">December 5th, 2022</div>
-        </div>
-        <div class="time">1:35:25 <small>PM</small></div>
       </div>
     </div>
     <footer>
