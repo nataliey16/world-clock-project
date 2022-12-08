@@ -8,7 +8,7 @@ function showCityTimezones() {
     let singaporeTimeElement = singaporeElement.querySelector(".time");
 
     singaporeDateElement.innerHTML =
-      showSingaporeTimezone.format("MMMM Do, YYYY");
+      showSingaporeTimezone.format("DD MMM YYYY");
     singaporeTimeElement.innerHTML = showSingaporeTimezone.format(
       "h:mm:ss [<small]>A[</small>]"
     );
@@ -25,7 +25,7 @@ function showCityTimezones() {
     let vancouverTimeElement = vancouverElement.querySelector(".time");
 
     vancouverDateElement.innerHTML =
-      showVancouverTimezone.format("MMMM Do, YYYY");
+      showVancouverTimezone.format("DD MMM YYYY");
     vancouverTimeElement.innerHTML = showVancouverTimezone.format(
       "h:mm:ss [<small]>A[</small>]"
     );
@@ -41,8 +41,24 @@ function showCityTimezones() {
     let osloDateElement = osloElement.querySelector(".date");
     let osloTimeElement = osloElement.querySelector(".time");
 
-    osloDateElement.innerHTML = showOsloTimezone.format("MMMM Do, YYYY");
+    osloDateElement.innerHTML = showOsloTimezone.format("DD MMM YYYY");
     osloTimeElement.innerHTML = showOsloTimezone.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
+
+  // cairo
+
+  let cairoElement = document.querySelector("#cairo");
+
+  if (cairoElement) {
+    let cairoTimezone = moment().tz("Africa/Cairo");
+
+    let cairoDateElement = cairoElement.querySelector(".date");
+    let cairoTimeElement = cairoElement.querySelector(".time");
+
+    cairoDateElement.innerHTML = cairoTimezone.format("DD MMM YYYY");
+    cairoTimeElement.innerHTML = cairoTimezone.format(
       "h:mm:ss [<small>]A[</small>]"
     );
   }
@@ -51,6 +67,8 @@ showCityTimezones();
 setInterval(showCityTimezones, 1000);
 
 function handleShowCity(event) {
+  let homepage = document.querySelector(".homepage");
+  homepage.innerHTML = ` <i class="fa-solid fa-chevron-left"></i>Back to All Cities`;
   let cityTimezone = event.target.value;
   if (cityTimezone === "current") {
     cityTimezone = moment.tz.guess();
@@ -59,10 +77,10 @@ function handleShowCity(event) {
   let cityTime = moment().tz(cityTimezone);
   let citiesElement = document.querySelector(".cities");
   citiesElement.innerHTML = `
-    <div class="city">
+    <div class="city alternate-dark">
       <div>
       <h2>${cityName}</h2>
-      <div class="date">${cityTime.format("MMMM Do, YYYY")}</div>
+      <div class="date">${cityTime.format("MMM D YYYY")}</div>
       </div>
       <div class="time">
       ${cityTime.format("h:mm:ss")} <small>${cityTime.format("A")}</small>
@@ -72,5 +90,3 @@ function handleShowCity(event) {
 
 let cityElement = document.querySelector("#listCity");
 cityElement.addEventListener("change", handleShowCity);
-
-setInterval(handleShowCity, 1000);

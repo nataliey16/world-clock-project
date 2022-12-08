@@ -7,6 +7,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.39/moment-timezone-with-data-1970-2030.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/3b18046631.js"
       crossorigin="anonymous"
@@ -16,12 +24,17 @@
   </head>
   <body>
     <div class="container">
-      <h1>
-        <a href="/"> World Clock</a>
-      </h1>
+      <div class="header">
+        <ul>
+          <li class="top-h1">world</li>
+          <li class="bottom-h1">clock <i class="fa-regular fa-clock"></i></li>
+        </ul>
+        <div class="semicircle"></div>
+      </div>
+
       <form action="/submit">
         <select name="" id="listCity">
-          <option value="">Select a city</option>
+          <option value="">select a city</option>
           <option value="current">My Current Location</option>
           <option value="Asia/Tokyo">Tokyo</option>
           <option value="Australia/Sydney">Sydney</option>
@@ -31,7 +44,7 @@
       <div class="cities">
         <div class="city" id="singapore">
           <div>
-            <h2>Singapore</h2>
+            <h2>Singapore <i class="fa-solid fa-earth-asia"></i></h2>
             <div class="date"></div>
           </div>
           <div class="time">
@@ -39,9 +52,9 @@
           </div>
         </div>
 
-        <div class="city" id="vancouver">
+        <div class="city alternate-dark" id="vancouver">
           <div>
-            <h2>Vancouver</h2>
+            <h2>Vancouver <i class="fa-solid fa-earth-americas"></i></h2>
             <div class="date"></div>
           </div>
           <div class="time">
@@ -51,7 +64,17 @@
 
         <div class="city" id="oslo">
           <div>
-            <h2>Oslo</h2>
+            <h2>Oslo <i class="fa-solid fa-earth-europe"></i></h2>
+            <div class="date"></div>
+          </div>
+          <div class="time">
+            <small></small>
+          </div>
+        </div>
+
+        <div class="city alternate-dark" id="cairo">
+          <div>
+            <h2>cairo <i class="fa-solid fa-earth-africa"></i></h2>
             <div class="date"></div>
           </div>
           <div class="time">
@@ -60,7 +83,7 @@
         </div>
       </div>
 
-      <a href="/" class="homepage">Back to All Cities</a>
+      <a href="/" class="homepage"></a>
     </div>
     <footer>
       This project was coded by
