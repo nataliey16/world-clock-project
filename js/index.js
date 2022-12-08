@@ -77,7 +77,7 @@ function handleShowCity(event) {
   let cityTime = moment().tz(cityTimezone);
   let citiesElement = document.querySelector(".cities");
   citiesElement.innerHTML = `
-    <div class="city alternate-dark">
+    <div class="city alternate-dark individual-city">
       <div>
       <h2>${cityName}</h2>
       <div class="date">${cityTime.format("MMM D YYYY")}</div>
@@ -90,3 +90,11 @@ function handleShowCity(event) {
 
 let cityElement = document.querySelector("#listCity");
 cityElement.addEventListener("change", handleShowCity);
+
+function handleChangeDisplayTheme() {
+  let body = document.querySelector("body");
+  body.classList.toggle("dark");
+}
+
+let changeDisplayTheme = document.querySelector(".dark-theme-btn");
+changeDisplayTheme.addEventListener("click", handleChangeDisplayTheme);
