@@ -80,7 +80,7 @@ function handleShowCity(event) {
     <div class="city alternate-dark individual-city">
       <div>
       <h2>${cityName}</h2>
-      <div class="date">${cityTime.format("MMM D YYYY")}</div>
+      <div class="date">${cityTime.format("DD MMM YYYY")}</div>
       </div>
       <div class="time">
       ${cityTime.format("h:mm:ss")} <small>${cityTime.format("A")}</small>

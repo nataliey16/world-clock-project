@@ -44,6 +44,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  opacity: 0.7;
+}
+
 .container {
   margin: 0 auto;
   background: #dde1ec;
@@ -140,6 +144,14 @@ a {
   margin-bottom: 30px;
 }
 
+.homepage {
+  color: #4d39fd;
+}
+
+.homepage:hover {
+  opacity: 0.7;
+}
+
 /* //DARK MODE CSS */
 
 .dark {
@@ -149,6 +161,10 @@ a {
 .dark .container {
   background: #393959;
   border: 1px solid #4e4e68;
+}
+
+.dark .bottom-h1 {
+  -webkit-text-stroke: 0.5px black;
 }
 
 .dark,
@@ -172,6 +188,13 @@ ul {
   color: white;
 }
 
+.dark .homepage {
+  color: #f15f69;
+}
+
+.homepage:hover {
+  opacity: 0.7;
+}
 .dark .alternate-dark {
   background: #4e4e68;
 }
