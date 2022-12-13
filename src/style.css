@@ -209,8 +209,65 @@ ul {
   transition: all 150ms ease-in-out;
   margin-bottom: 30px;
 }
+
 footer {
   font-size: 18px;
   margin: 30px 0;
   text-align: center;
+}
+
+@media (max-width: 375px) {
+  .container {
+    max-width: 400px;
+    padding: 20px 20px;
+  }
+
+  .top-h1,
+  .bottom-h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+  }
+  .fa-clock {
+    font-size: 50px;
+  }
+
+  .semicircle {
+    width: 160px;
+    height: 80px;
+    border-radius: 12rem 12rem 0 0;
+    background: linear-gradient(to right, #f15f69, #ff9953);
+    position: relative;
+    top: 215px;
+    right: 50px;
+  }
+
+  select {
+    font-size: 18px;
+    padding: 10px 10px;
+  }
+
+  .time {
+    font-size: 24px;
+    line-height: 1.25;
+  }
+  .time small {
+    font-size: 12px;
+    vertical-align: middle;
+  }
+  .city {
+    font-size: 14px;
+    padding: 20px 10px;
+  }
+
+  .fa-earth-asia,
+  .fa-earth-americas,
+  .fa-earth-europe,
+  .fa-earth-africa {
+    font-size: 18px;
+  }
+
+  .date {
+    font-size: 15px;
+  }
 }
