@@ -67,16 +67,17 @@ showCityTimezones();
 setInterval(showCityTimezones, 1000);
 
 function handleShowCity(event) {
-  let homepage = document.querySelector(".homepage");
-  homepage.innerHTML = ` <i class="fa-solid fa-chevron-left"></i>Back to All Cities`;
-  let cityTimezone = event.target.value;
-  if (cityTimezone === "current") {
-    cityTimezone = moment.tz.guess();
-  }
-  let cityName = cityTimezone.replace("_", " ").split("/")[1];
-  let cityTime = moment().tz(cityTimezone);
-  let citiesElement = document.querySelector(".cities");
-  citiesElement.innerHTML = `
+  setInterval(function () {
+    let homepage = document.querySelector(".homepage");
+    homepage.innerHTML = ` <i class="fa-solid fa-chevron-left"></i>Back to All Cities`;
+    let cityTimezone = event.target.value;
+    if (cityTimezone === "current") {
+      cityTimezone = moment.tz.guess();
+    }
+    let cityName = cityTimezone.replace("_", " ").split("/")[1];
+    let cityTime = moment().tz(cityTimezone);
+    let citiesElement = document.querySelector(".cities");
+    (citiesElement.innerHTML = `
     <div class="city alternate-dark individual-city">
       <div>
       <h2>${cityName}</h2>
@@ -85,7 +86,9 @@ function handleShowCity(event) {
       <div class="time">
       ${cityTime.format("h:mm:ss")} <small>${cityTime.format("A")}</small>
       </div>
-  </div>`;
+  </div>`),
+      1000;
+  });
 }
 
 let cityElement = document.querySelector("#listCity");
